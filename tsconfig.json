@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "noImplicitAny": false,
+        "module": "commonjs",
+        "removeComments": false, //是否移除文档注释
+        "sourceMap": false, //是否生成对应的map文件
+        // "outDir": "js_output", //指定输出目录文件夹名称
+        "watch": true,
+        "strict": true,
+        "lib": [
+            "es2015",
+            "dom"
+        ]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
