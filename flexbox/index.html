@@ -38,9 +38,8 @@
 	<div class="item"></div>
 	<div class="item"></div>
 </mu-flexbox>
+<script src="https://cdn.bootcss.com/webcomponentsjs/1.1.0/webcomponents-lite.js"></script>
 <script src="./index.js"></script>
 <script>
-	window.onresize = evt => {
-		console.log(flexbox.notice())
-	}
+	window.onresize = evt => flexbox.notice()
 </script>
