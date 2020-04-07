@@ -1,0 +1,3 @@
+[submodule "src/styles/blank"]
+	path = src/styles/blank
+	url = https://github.com/zhmushan/blank
