@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div class="app">
+    <!-- 移动端菜单按钮 -->
+    <button class="menu-btn" id="menu-btn" title="菜单">
+      ☰
+    </button>
+
+    <!-- 侧边导航 -->
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="主导航">
+      <nav class="sidebar__nav" id="nav-container">
+        <!-- 导航项由 JavaScript 动态渲染 -->
+      </nav>
+    </aside>
+
+    <!-- 侧边栏遮罩 -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- 主内容区域 - iframe -->
+    <main class="main-content" id="main-content" role="main">
+      <!-- iframe 将在这里创建 -->
+    </main>
+
+    <!-- 下载按钮 -->
+    <button class="download-btn" id="download-btn" title="下载当前页面源码">
+      ⬇️
+    </button>
+  </div>
+
+  <script type="module" src="./index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+# 依赖目录
+node_modules/
+
+# 动态生成的资源（从远程同步）
+nav_data.json
+pages/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 日志
+*.log
