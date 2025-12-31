@@ -72,20 +72,6 @@ async function fetchText(url) {
   return response.text();
 }
 
-/**
- * 从 URI 提取文件名
- * @param {string} uri - 资源 URI
- * @returns {string}
- */
-function getFilenameFromUri(uri) {
-  try {
-    const url = new URL(uri);
-    return basename(url.pathname) || 'index.html';
-  } catch {
-    return basename(uri) || 'index.html';
-  }
-}
-
 /* ============================================
    资源同步
    ============================================ */
@@ -109,7 +95,7 @@ async function syncResources() {
   writeFileSync(PATHS.navData, navDataText, 'utf-8');
   log('nav_data.json 同步完成', 'success');
 
-  /** @type {NavItem[]} */
+  /** @type {Record<string, NavItem>} */
   const navData = JSON.parse(navDataText);
 
   // 2. 清空并重建 pages 目录
@@ -119,10 +105,10 @@ async function syncResources() {
   mkdirSync(PATHS.pages, { recursive: true });
 
   // 3. 同步每个页面内容
-  log(`同步 ${navData.length} 个页面...`);
+  log(`同步 ${Object.keys(navData).length} 个页面...`);
 
-  for (const item of navData) {
-    const filename = getFilenameFromUri(item.uri);
+  for (const [key, item] of Object.entries(navData)) {
+    const filename = `${key}.html`;
     const filePath = join(PATHS.pages, filename);
 
     try {
